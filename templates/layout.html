@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Squid {% if page_title %}| {{ page_title }}{% endif %}</title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+
+        p {
+            margin: 20px 0;
+            line-height: 1.5em;
+        }
+
+        header h1 {
+            font-size: 3.8em;
+            line-height: 1.2em;
+        }
+
+        .post {
+            margin-bottom: 25px;
+        }
+
+        .post h4 {
+            margin: 0; 
+        }
+    </style>
+    <link href="{{ url_for('static', filename='css/bootstrap-responsive.min.css') }}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="span8 offset2">
+            <header class="jumbotron">
+                <h1>Squid v0.1</h1>
+                <p class="lead">
+                    Welcome to Squid, a static blog site generator built on <a href="http://flask.pocoo.org">Flask</a>. Pages and posts
+                    are constructed of Markdown. Checkout the example <a href="/page/about">About</a> page.
+                </p>
+                <hr />
+            </header>
+        </div>
+    </div>
+
+    {% block content%}{% endblock %}
+
+    <div class="row">
+        <div class="span8 offset2">
+            <hr />
+            <footer>
+                <small>
+                    This site was built with <a href="http://github.com/geekforbrains/squid">Squid</a>.
+                    It runs on <a href="http://gunicorn.org">Gunicorn</a> and <a href="http://nginx.org">Nginx</a>.
+                </small>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<br /><br />
+<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</body>
+</html>

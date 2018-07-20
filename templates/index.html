@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="span8 offset2">
+            <strong>Recent Posts</strong>
+
+            <br /><br />
+
+            <div class="row">
+
+                {% for post in posts %}
+                    <div class="span4">
+
+                        <div class="post">
+                            <h4><a href="/post/{{ post.slug }}">{{ post.title }}</a></h4>
+                            <small>{{ post.date|date_format }}</small>
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
